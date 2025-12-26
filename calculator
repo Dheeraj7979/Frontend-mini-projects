@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>calculator</title>
+     <style>
+          *{
+               margin:0;
+               padding: 0;
+               box-sizing: border-box;
+          }
+          body{
+               background-image: linear-gradient( to left,#000000d9,#000000);
+               height: 100%;
+                 
+          }
+          html{
+               font-size: 62.5%;
+               height: 100%;
 
+          }
+       
+          .container{
+               
+               margin: auto auto;
+               margin-top: 5rem;
+               
+                height: max-content;
+                width: fit-content;
+               display: grid;
+               grid-template-rows:auto 1fr;
+               gap: 2rem;
+               box-shadow: 0 0 0.1rem 0.1rem  rgba(255, 255, 255, 0.789); 
+          
+               /* padding: 2rem;  */
+          
+          }
+          .answer-box{
+                /* background-color: #111;  */
+               color: #fff;
+                padding: 20px; 
+               font-size: clamp(1.5rem,5vw,3rem);
+               display: flex;
+               align-items: flex-end;
+               justify-content: flex-end;
+               border-radius: 10px;
+               font-size: 4rem;
+               overflow-x:auto;
+               max-width: 320px;
+               scroll-behavior: smooth;
+          }
+       
+
+              .grid{
+               display: grid;
+               grid-template-columns: 1fr 1fr 1fr 1fr;
+               grid-auto-rows: 1fr;
+               gap: 2rem;
+               align-content: stretch;
+               height: 100%;
+               grid-template-rows: repeat(5,1fr);
+               padding-left: 2rem;
+               padding-right: 2rem;
+               padding-bottom: 2rem;
+          
+          } 
+          .button{
+                aspect-ratio: 1/1;
+               font-size: 2rem;
+               box-shadow: 0.1rem 0.1rem 0.2rem 0.1rem grey;
+               color: white;
+               text-align: center;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               cursor: pointer;
+               border-radius: 50%;
+               background-color: #000000;
+               padding: 0.8rem;
+               
+          }
+          .number{
+               font-size: 2.5rem;
+          }
+          .operator{
+               color: rgb(22, 240, 22);
+          }
+          #equalto{
+               background-color: rgb(220, 94, 5);
+               color: white;
+          }
+
+            @media (width<600px) {
+               
+               .container{
+                    margin-top:0.2rem;
+                    /* box-shadow: none; */
+                   
+                    height:fit-content;
+                    width: fit-content;
+                    max-width: 600px;
+                    
+                    background-color: none;
+                    width: 99%;
+               }
+                .answer-box{
+                    margin: 0;
+                    height: auto;
+               } 
+               
+          }
+          @media (width<400px) {
+               .container{
+                    box-shadow: none;
+                    width: 90%;
+                    grid-template-rows: 1fr 2fr;
+                    max-width: 100vw;
+               }
+               
+
+          }  
+          
+
+     </style>
+</head>
+<body>
+     
+          <div class="container">
+               <div class="answer-box">0</div>
+               <div class="operating-box grid">
+                   <p class="button operator" id="ac">AC</p>
+                   <p class="button operator" id="del">DEL</p>
+                   <p class="button operator" id="percentage">%</p>
+                   <p class="button operator" id="divide">/</p>
+                   <p class="number button" id="seven">7</p>
+                   <p class="number button" id="eight">8</p>
+                   <p class="number button" id="nine">9</p>
+
+                   <p class="button operator" id="multiply">*</p>
+
+                   <p class="number button" id="four">4</p>
+                   <p class="number button" id="five">5</p>
+                   <p class="number button" id="six">6</p>
+
+                   <p class="button operator" id="subtraction">-</p>
+
+                   <p class="number button" id="one">1</p>
+                   <p class="number button" id="two">2</p>
+                   <p class="number button" id="three">3</p>
+
+                   <p class="button operator" id="addition">+</p>
+
+                   <p class="number button" id="zeros">00</p>
+                   <p class="number button" id="0">0</p>
+                   <p class="number button" id="dot">.</p>
+
+                   <p class="button operator" id="equalto">=</p>
+                   
+               </div>
+          </div>
+     
+     <script>
+          let answerBox=document.querySelector(".answer-box");
+          let answer=document.querySelector(".answer-box").textContent;
+          let number=document.querySelectorAll(".number");
+          let operator=document.querySelectorAll(".operator");
+
+          // function for numbers 
+         
+          function shownum(id){
+               const textinsideid=document.getElementById(id).textContent;
+               // answer=answer*10+parseFloat(textinsideid);
+               if(answer==0){
+                    answer=textinsideid;
+                    answerBox.textContent=answer;
+               } 
+                    else{       
+               answer=`${answer}${textinsideid}`
+               answerBox.textContent=answer;
+                    }
+          }
+
+          // function for working of operator 
+          function showoperator(id){
+               const textinsideid=document.getElementById(id).textContent;
+                    if(textinsideid=='='){
+                         let output=eval(answer);
+                         output=parseFloat(output.toFixed(4))
+                         answer=output;
+                         answerBox.textContent=answer;
+                         answer=output.toString();
+
+                    } else if (textinsideid=='AC'){
+                         answer=0;
+                         answerBox.textContent=answer;
+                    } else if(textinsideid=='DEL'){
+                          answer=answer.slice(0,-1);
+                         answerBox.textContent=answer;
+                    }
+                     else{
+                         const lastindex=answer[answer.length-1];
+                         if(lastindex=='+'||lastindex=='-'||lastindex=='*'||lastindex=='/'||lastindex=='%'){
+                              answer=answer.slice(0,-1);
+                         }
+
+                         answer=`${answer}${textinsideid}`;
+                         answerBox.textContent=answer;   
+                    }
+          }
+
+          // loop in number  click property...>>>
+
+          number.forEach(element => {
+               element.addEventListener('click',function(){
+                    shownum(this.id);
+               })
+          });
+
+          // loop in operator 
+          operator.forEach(element =>{
+               element.addEventListener('click',function(){
+                    showoperator(this.id);
+               })
+          })
+
+
+
+           
+     </script>
+</body>
+</html>
