@@ -1,0 +1,140 @@
+html{
+     font-size: 62.5%;
+     margin: 0;
+}
+body{
+     font-size:1.6rem;
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+     height: 100vh;
+     width: 100vw; 
+     justify-content: center;
+     color: #fff;    
+}
+.container{
+    width: 100%;
+    height: 100%; 
+    background-color:#001422;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center; 
+    overflow: hidden; 
+}
+.wrapper{
+     position:relative;
+}
+.box-cart{
+     background-color:rgba(255, 255, 255, 0.153);
+     backdrop-filter: blur(18.8px);
+     border-radius: 5px; 
+     padding: 10px;
+     max-width: 300px;
+}
+.inner-cart{
+     border: 0.74px solid rgba(255, 255, 255, 0.322);
+     border-radius: 5px;
+    
+}
+.product-details{
+     display: flex;
+     flex-direction: column;
+     margin: 10px;
+}
+.text{
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     margin:0;
+}
+.student-level-heart{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+}
+#student-level{
+     color: #FFD147;
+     background-color:rgba(241,198,68,0.24);
+     width: fit-content;
+     padding: 2px 5px;
+     border-radius: 5px;
+     margin-bottom: 10px;
+}
+#course-title{
+     font-weight: 700;
+     letter-spacing: 0.1rem;
+}
+#course-author{
+     margin: 10px 0px;
+     font-weight: 300;
+     font-size: 1.2rem;
+     letter-spacing: 0.1rem;
+}
+.rating-box{
+     display: flex;
+     gap: 1rem;
+     align-items: center;
+     margin-bottom: 10px;
+}
+#star{
+     color: #FFD147;
+     letter-spacing: 0.3rem;
+     font-size: 2rem;
+     position: relative;
+     bottom: 1px;
+}
+#rating{
+     color: #FFD147;
+     font-size: 1.5rem;
+}
+#total-rating{
+     font-size: 1.8rem;
+}
+
+.image-box img{
+     background-size: cover;
+     background-repeat: no-repeat;
+     max-width: 300px;
+     height: 100%;
+     width: 100%;
+}
+.cart{
+     display: flex;
+     justify-content: center;
+     text-decoration: none;
+     color: white;
+     gap: 5px;
+     border-top: 0.74px solid rgba(255, 255, 255, 0.286);
+     padding: 15px;
+     font-size:1.56rem;
+     align-items: center;
+}
+#first-circle{
+     aspect-ratio: 1;
+     height: 138px;
+     position: absolute;
+     background: radial-gradient(rgba(234,139,250,1),rgba(117,38,245,1));
+     top: -65px;
+     left: -65px;
+     border-radius:50%;
+     z-index:0;
+}
+#second-circle{
+     aspect-ratio: 1;
+     height: 329px;
+     position: absolute;
+     background: radial-gradient(#BD95FF,#A661FF,#6100FF);
+     top: -100px;
+     right: -240px;
+     border-radius:50%;
+     z-index:0;
+}
+#third-circle{
+     aspect-ratio: 1;
+     height: 230.56px;
+     position: absolute;
+     background: radial-gradient(#FED0FF,#7F00FF);
+     bottom: -100px;
+     left: -130px;
+     border-radius:50%;
+     z-index:0;
+}
