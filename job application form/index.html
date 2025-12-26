@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>JOB APPLICATION FORM</title>
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+     <link href="style.css" rel="stylesheet">
+
+</head>  
+<body>
+     <div class="container">
+          <div class="title">
+               <p id="title-heading">Job Application</p>
+               <pre id="title-heading2"> (web)</pre>
+          </div>
+
+          <form action="/action.php">
+               <span class="field info" id="fistname">
+                    <label for="firstname-box">First Name</label>
+                    <input placeholder="Enter First Name..." id="firstname-box" type="text" required>
+               </span>
+               <span class="field info" id="lastname">
+                    <label for="lastname-box">Last Name</label>
+                    <input placeholder="Enter Last Name..." id="lastname-box" type="text" required>
+               </span>
+               <span class="field info" id="email">
+                    <label for="email-box">Email</label>
+                    <input placeholder="Enter First Name..." type="email" id="email" required>
+               </span>
+               <span class="field info" id="job-role">
+                    <label for="job-role-select">Job Role</label>
+                    <select id="job-role-select" name="Select Job Role" required>
+                         <option>Frontend Developer</option>
+                         <option>Backend Developer</option>
+                         <option>Full Stack Developer</option>
+                         <option>UI UX Design</option>
+                    </select> 
+               </span>
+               <span class="field info" id="address">
+                    <label for="address-box">Address</label>
+                    <textarea id="address-box" placeholder="Enter Address" rows="2" required></textarea>
+               </span>
+               <span class="field info" id="city">
+                    <label for="city-box">City</label>
+                    <input placeholder="Enter City Name..." type="text" id="city-box" required>
+               </span>
+               <span class="field info" id="pincode">
+                    <label for="pincode-box">Pincode</label>
+                    <input placeholder="Enter Pincode..." type="number" id="pincode-box" required>
+               </span>
+               <span class="field info" id="Date">
+                    <label for="date-box">Date</label>
+                    <input type="date" id="date-box" required>
+               </span>
+               <span class="field info" id="cv">
+                    <label for="cv-box">Upload Your CV</label>
+                    <input type="file" id="cv-box">
+               </span>
+               <button type="submit" class="submit">Submit</button>
+
+          </form>
+     </div>
+     <script src="index.js"></script>
+     
+</body>
+</html>
