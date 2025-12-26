@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>counter program</title>
+     <style>
+
+          body{
+               
+               justify-items: center;
+               align-items: center;
+          }
+          .number-shown{
+               color:black;
+               font-size: 60px;
+               font-weight: 100;
+          }
+          .button{
+               margin: 5px;
+               padding: 5px 10px;
+               font-size: 18px;
+               color: white;
+               background-color: rgba(16, 132, 248, 0.701);
+               border-radius: 10px;
+          }
+          .button:hover{
+               background-color: rgba(2, 120, 238, 0.986);
+          }
+     </style>
+</head>
+<body>
+     <h1 class="number-shown">0</h1>
+     <div class="buttons">
+     <button class="button"  id="decrease">Decrease</button>
+     <button class="button" id="reset">Reset</button>
+     <button class="button" id="increase">Increase</button>
+     </div>
+
+     <script>
+          const decreaseButton=document.querySelector("#decrease");
+          const increaseButton=document.getElementById("increase");
+          const resetButton=document.querySelector("#reset");
+          let numberShown= document.querySelector(".number-shown").textContent;
+
+          increaseButton.onclick=function() {
+              numberShown=Number(numberShown+1);
+               console.log(numberShown);
+               document.querySelector(".number-shown").textContent=Number(numberShown);
+          }
+          decreaseButton.onclick=function() {
+              numberShown=Number(numberShown-1);
+               console.log(numberShown);
+               document.querySelector(".number-shown").textContent=Number(numberShown);
+          }
+          resetButton.onclick=function() {
+              numberShown=Number(0);
+               console.log(numberShown);
+               document.querySelector(".number-shown").textContent=Number(numberShown);
+          }
+
+     </script>
+</body>
+</html>
